@@ -1,2 +1,2 @@
-# CookWithWhatYouHave
-Cook With What You Have
+# CookWhatYouHave
+Cook What You Have
