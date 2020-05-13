@@ -11,6 +11,10 @@ if (!recipe){
     recipe =[]; 
 }
 
+$("#searchBtn").on("click", function(){
+    ingredients=$("#ingredients").val();
+    searchRecipes(ingredients);
+})
 
 function searchRecipes (ingredients){  
 
@@ -19,11 +23,11 @@ function searchRecipes (ingredients){
   $.ajax({
       url: queryURL,
       method: "GET"
-  }).then(function (response) {
+  }).then(function(response) {
      console.log(response);   
 // aray of recipes
    
-     getRecipe(response[0].id);
+    getRecipe(response[0].id);
      
     //  loop for listing the used ingredients 
     // for recipe id.
@@ -36,7 +40,7 @@ for (i=0; i<response.length; i++){
 // var ..
 // append
 // add a style to the class
-  
+
 // var cardRecipe='<div>'
 // cardRecipe.addClass=""
 // var img ="<img>"
@@ -74,15 +78,28 @@ function getRecipe(id){
         method: "GET"
     }).then(function (response) {
         console.log (response);
+        console.log("show recipe");
         // console.log (response.title)
         // console.log(response.image)
         // console.log(response.sourceUrl)
          console.log(response.instructions)
-
+        //  console.log(response.ingredients)
          // go to a detail page or open a modal with the detail info
         // console.log(response.analyzedInstructions[0].steps[0].ingredients)
+        console.log(response.extendedIngredients)
+        for (i=0; i<response.extendedIngredients.length; i++){
+            console.log(response.extendedIngredients[i].original)
+        }
+        /*1-title and image
+        1-ingredients
+        1-instructions*/
+        
     });   
 }
 
-// only when we click we can the id. We need another function. When we click on the result. 
+// only when we click we can get the id. We need another function. When we click on the result. 
+
+// function showRecipe(id){
+//     var 
+// }
 
