@@ -111,6 +111,8 @@ $(".viewRecipe").on ("click", function(){
     console.log(this)
     let id = $(this).attr("recipe")
 
+    $("#show").empty()
+
     getRecipe(id);
 })
 // another renderResult function within the for loop 
@@ -132,20 +134,43 @@ function getRecipe(id){
         console.log (response);
         console.log("show recipe");
         // console.log (response.title)
-        // console.log(response.image)
-        // console.log(response.sourceUrl)
-         console.log(response.instructions)
+        $("#show").append("<h3>" + response.title + "</h3>");
+
+        console.log(response.image);
+        $("#show").append('<img src='+ response.image + ">");
+
+        // console.log(response.extendedIngredients)
+        var ingredients = $("<div>");
+
+        ingredients.append("<p>" + "Ingredients" + "</p>");
+        
+        for (i=0; i<response.extendedIngredients.length; i++){
+            
+            // console.log(response.extendedIngredients[i].original)
+            var ingredient = $("<p>");
+            ingredient.text(response.extendedIngredients[i].original);
+            ingredients.append(ingredient);
+        }
+
+        $("#show").append(ingredients)
+
         //  console.log(response.ingredients)
          // go to a detail page or open a modal with the detail info
         // console.log(response.analyzedInstructions[0].steps[0].ingredients)
-        console.log(response.extendedIngredients)
-        for (i=0; i<response.extendedIngredients.length; i++){
-            console.log(response.extendedIngredients[i].original)
-        }
+        
         /*1-title and image
         1-ingredients
         1-instructions*/
-        
+
+        // console.log(response.instructions)
+        var instructions = $("<div>");
+
+        instructions.append("<p>" + "Instructions" + "</p>");
+        instructions.append("<p>" + response.instructions + "</p>");
+
+        $("#show").append(instructions);
+
+
     });   
 }
 
