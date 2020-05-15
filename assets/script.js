@@ -41,8 +41,8 @@ var p = Math.floor(Math.random() * parseInt(response.photos.length)) + 1;
 // Fetch recipes from ingredients
 
 // var apiId = "6d15138b427645f68ff32030ae3cb1cc"; 
-    var apiId ="b229212145ae4030923cb4146500d590";
-    // var apiId ="023b6d102d964dadb8821194c30016d7";
+    //var apiId ="b229212145ae4030923cb4146500d590";
+     var apiId ="023b6d102d964dadb8821194c30016d7";
 
 // var ingredients = "apples"; 
 
@@ -56,7 +56,6 @@ if (!recipe){
 }
 
 $("#search").submit(function(event){   
-
     event.preventDefault();
 
     console.log("ingredients");
@@ -77,17 +76,21 @@ function searchRecipes (ingredients){
      console.log(response);   
 // aray of recipes
    
-    getRecipe(response[0].id);
+    // getRecipe(response[0].id);
      
     //  loop for listing the used ingredients 
     // for recipe id.
 
-    $("#show").empty() 
+    //$("#show").empty() 
+    console.log('length of response: ' + response.length);
     for (i=0; i<response.length; i++){
         console.log(response[i].title)
-
-    var recipeCard='<div class="card col-3" style="width: 18rem;"><img src='+ response[i].image +  ' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' +response[i].title  +'</h5><p class="card-text">.</p><a href="#" class="btn btn-primary viewRecipe" recipe= '+response[i].id + '>View Recipe</a></div></div>'
     
+    createRecipeCard(response[i].image, response[i].title, response[i].id);
+    //var recipeCard='<div class="card col-3" style="width: 18rem;"><img src='+ response[i].image +  ' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' +response[i].title  +'</h5><p class="card-text">.</p><a href="#" class="btn btn-primary viewRecipe" recipe= '+response[i].id + '>View Recipe</a></div></div>'
+    
+    
+
 // ${}
 // var ..
 // append
@@ -99,22 +102,24 @@ function searchRecipes (ingredients){
 // img.attr("src", respons[i).image
 //     var title
 
-    $("#show").append(recipeCard)
+    //$("#show").append(recipeCard)
    // console.log(response[i].image);
     // console.log(response[i].usedIngredients[0].name);
     // console.log(response[i].missedIngredients[0].name);
   //  console.log(response[i].id);
     
   //  getRecipe(response[i].id);
-}
-$(".viewRecipe").on ("click", function(){
-    console.log(this)
-    let id = $(this).attr("recipe")
+    }
+  
+// $(".viewRecipe").on ("click", function(){
+//     console.log(this)
+//     let id = $(this).attr("recipe")
 
-    $("#show").empty()
+//     $("#show").empty()
 
-    getRecipe(id);
-})
+//     console.log('inside viewRecipe');
+//     getRecipe(id);
+// });
 // another renderResult function within the for loop 
 //  create cards/html elements to put the recipe informations. 
 // clean up each part before . 
@@ -123,7 +128,17 @@ $(".viewRecipe").on ("click", function(){
   });
 };
 
-searchRecipes (ingredients);
+$(".viewRecipe").on ("click", function(){
+    console.log(this)
+    let id = $(this).attr("recipe")
+
+    $("#show").empty()
+
+    console.log('inside viewRecipe');
+    getRecipe(id);
+});
+
+//searchRecipes (ingredients);
 
 function getRecipe(id){
     var queryURL="https://api.spoonacular.com/recipes/" +id + "/information?includeNutrition=false" + "&apiKey=" + apiId;
@@ -172,6 +187,42 @@ function getRecipe(id){
 
 
     });   
+}
+
+function createRecipeCard (responseImage, title, id) {
+
+    console.log('i got here');
+
+    var cell = $('<div>');
+    cell.attr('class', 'cell small-6 medium-6 large-3');
+
+    console.log('cell' + cell);
+
+    var card = $('<div>');
+    card.attr('class', 'card card-hover');
+
+    console.log(card);
+
+    var img = $('<img>');
+    img.attr('src', responseImage);
+
+    var cardSection = $('<div>');
+    cardSection.attr('class', 'card-section card-hovered');
+
+    var text = $('<p>');
+    text.text(title);
+
+
+    cardSection.append(text);
+
+    card.append(img).append(cardSection);
+
+    console.log('logging card: ' + card);
+    cell.append(card);
+
+    $('#cardGrid').append(cell);
+
+    console.log('logging cell: ' + cell);
 }
 
 // only when we click we can get the id. We need another function. When we click on the result. 
