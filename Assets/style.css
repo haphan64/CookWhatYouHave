@@ -33,7 +33,7 @@
 /* Search Bar */
 
 input {
-   
+    display: inline !important;
 	outline: none;
 }
 input[type=search] {
@@ -70,5 +70,107 @@ input[type=search]:focus {
 	
 }
 
-  
-  
+h2:hover .card-hovered {
+    display: block;
+}
+
+  /* Tony */
+.card-grid {
+    /*margin: 4rem 8rem 4rem 8rem;*/
+    margin-bottom: 4rem !important;
+    margin-left: 8rem !important;
+    margin-right: 8rem !important;
+}
+
+/* Tony */
+.grid-margin-y {
+    margin-top: 4rem;
+    /*margin-bottom: 4rem;*/
+    margin-left: 8rem;
+    margin-right: 8rem;
+    /* margin: 8rem, 4rem, 8rem, 4rem; */
+}
+
+/* Tony */
+.card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 0px solid;
+    border-radius: 25px;
+    position: relative;
+}
+
+/* Tony */
+.card-hover:hover .card-hovered {
+    display: block !important;
+}
+
+/* Tony */
+.card-section {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    background-color: #bcd0e5;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 75%;
+}
+
+/* Tony */
+@media (min-width: 320px) {
+    .input-group {
+        width: 100%;
+    }
+
+    .card-grid {
+        /* margin-top: auto !important; */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .grid-margin-x>.small-6 {
+        width: 100%;
+    }
+
+    /* .card-hovered {
+        font-size: 2rem;
+        display:block;
+    } */
+}
+
+/* Tony */
+/* @media (max-width: 480px) {
+    .card-hovered {
+        
+    }
+} */
+
+/* Tony */
+@media (min-width: 641px) {
+    
+}
+
+/* Tony 
+@media (min-width: 961px) {
+    
+}
+
+/* Tony */
+@media (min-width: 1025px) {
+    .card {
+        width: 100%
+    }
+    
+    .card-hovered {
+        
+    }
+}
+
+/* Tony 
+@media (min-width: 1281px) {} */
