@@ -58,6 +58,8 @@ if (!recipe){
 $("#search").submit(function(event){   
     event.preventDefault();
 
+    $('#cardGrid').empty();
+
     //console.log("ingredients");
     ingredients=$("#ingredients").val();
     searchRecipes(ingredients);
