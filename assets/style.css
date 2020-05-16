@@ -1,27 +1,40 @@
+button{
 
-  h2
-  {
-      font-family: Georgia, 'Times New Roman', Times, serif !important;
-      
-      font-weight: 400px !important;
+    padding: .7rem 1rem !important;
 
-  }
+}
+
+.top-bar-left .p{
+
+    padding: .7rem 1rem !important;
+
+}
+h2
+{
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-weight: 400px !important;
+    font-size: 4rem !important;
+    color: white !important;
+    text-shadow: -1px 0 black,0 1px black,1px 0 black,0 -1px black;
+
+}
 
 
 .hero-section {
     /* background: url("Assets/images/index.jpg") 50% no-repeat; */
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: block;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   
   .hero-section .hero-section-text {
@@ -34,7 +47,7 @@
 /* Search Bar */
 
 input {
-    display: inline !important;
+   
 	outline: none;
 }
 input[type=search] {
@@ -66,9 +79,9 @@ input[type=search] {
 }
 input[type=search]:focus {
     height: auto;
-	/*width: 50vw;*/
+	width: 50vw;
 	background-color: #fff;
-	
+  
 }
 
 h2:hover .card-hovered {
@@ -121,6 +134,11 @@ h2:hover .card-hovered {
     display: none;
     position: absolute;
     top: 75%;
+}
+
+#content-blah {
+    height: 100vh;
+    overflow: scroll;
 }
 
 /* Tony */
