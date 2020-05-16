@@ -1,32 +1,46 @@
+button{
 
-  h2
-  {
-      font-family: Georgia, 'Times New Roman', Times, serif !important;
-      
-      font-weight: 400px !important;
+    padding: .7rem 1rem !important;
 
-  }
+}
+
+.top-bar-left .p{
+
+    padding: .7rem 1rem !important;
+
+}
+h2
+{
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-weight: 400px !important;
+    font-size: 4rem !important;
+    color: white !important;
+    text-shadow: -1px 0 black,0 1px black,1px 0 black,0 -1px black;
+
+}
 
 
 .hero-section {
-    /*background: url("Assets/images/index.jpg") 50% no-repeat;*/
+    /* background: url("Assets/images/index.jpg") 50% no-repeat; */
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
+    display: block;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   
   .hero-section .hero-section-text {
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
+    margin-top: 10rem;
   }
 
 
@@ -67,30 +81,115 @@ input[type=search]:focus {
     height: auto;
 	width: 50vw;
 	background-color: #fff;
-	
+  
 }
 
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
+h2:hover .card-hovered {
+    display: block;
+}
+
+  /* Tony */
+.card-grid {
+    /*margin: 4rem 8rem 4rem 8rem;*/
+    margin-bottom: 4rem !important;
+    margin-left: 8rem !important;
+    margin-right: 8rem !important;
+}
+
+/* Tony */
+.grid-margin-y {
+    margin-top: 4rem;
+    /*margin-bottom: 4rem;*/
+    margin-left: 8rem;
+    margin-right: 8rem;
+    /* margin: 8rem, 4rem, 8rem, 4rem; */
+}
+
+/* Tony */
+.card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 0px solid !important;
+    border-radius: 25px !important;
+    position: relative;
+}
+
+/* Tony */
+.card-hover:hover .card-hovered {
+    display: block !important;
+}
+
+/* Tony */
+.card-section {
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
-  }
-.fa:hover {
-    opacity: 0.7;
+    font-size: auto;
+    font-weight: bolder;
+    color: white;
+    background-color: #bcd0e5;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 75%;
 }
 
-.fa-facebook {
-  background: #3B5998;
-  color: white;
+#content-blah {
+    height: 100vh;
+    overflow: scroll;
 }
 
-.fa-youtube {
-  background: #bb0000;
-  color: white;
+/* Tony */
+@media (min-width: 320px) {
+    input[type=search] {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    .card-grid {
+        /* margin-top: auto !important; */
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+
+    .card {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .grid-margin-x>.small-6 {
+        width: 100%;
+    }
+
+    form h2 {
+        font-size: x-large;
+        font-weight: bolder;
+    }
+
+    /* .card-hovered {
+        font-size: 2rem;
+        display:block;
+    } */
+} 
+
+/* Tony */
+@media (min-width: 640px) {
+    
 }
-  
-  
+
+/* Tony */
+@media (min-width: 1024px) {
+    .card-grid {
+        /*margin: 4rem 8rem 4rem 8rem;*/
+        margin-bottom: 1rem !important;
+        margin-left: 4rem !important;
+        margin-right: 4rem !important;
+    }
+    
+}
+
+/* Tony 
+@media (min-width: 1281px) {} */

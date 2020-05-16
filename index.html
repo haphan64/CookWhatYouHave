@@ -7,7 +7,6 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="Assets/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 
 <!-- Compressed JavaScript -->
@@ -15,34 +14,54 @@
 </head>
 <body>
 
-  <div class="top-bar" style="background-color:whitesmoke;">
+  <div class="top-bar" style="background-color: black;">
     <div class="top-bar-left">
-      <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-youtube"></a>
+      <li><a href="index.html" style="color: bisque;">Cook What You Have!</a></li>
     </div>
     <div class="top-bar-right">
-      <ul class="menu" style="background-color:whitesmoke">
-        <li><a href="index.html" style="color: black;">Home</a></li>
-        <li><a href="about.html" style="color: black;">About</a></li>
+      <ul class="menu" style="background-color: black;">
+        <li><a href="index.html" style="color: bisque;">Home</a></li>
+        <li><a href="about.html" style="color: bisque;">About</a></li>
+        <li id="backbutton" style="display: none;"><button style="color: bisque;">Back</button></li>
       </ul>
     </div>
   </div>
 
-    <div class="hero-section">
-        <div class="hero-section-text"></div>
-        <form id = "search">
-          <h2>Find a Recipe</h2>
-          <input type="search" placeholder="ingredients1,ingredients2..." id="ingredients">
-        
-        </form>
-        
+    <div class="hero-section" id="background">
+
+      <div class="grid-y">
+        <div class="grid-x">
+          <div class="cell small-12">
+            <div class="hero-section-text"></div>
+           
+              <div class="hero-section-text"></div>
+              <form id = "search" style="background-color: transparent;">
+                <h2>Find a Recipe</h2>
+                <input type="search" placeholder="Please enter your ingredients..." id="ingredients">
+              </form>
+              <p id='credits' style="position: absolute;bottom: 0;right: 10%;"></p>
+         
+          </div>
+        </div>
+
+        <div class="grid-x grid-margin-x card-grid" id="cardGrid">
+        </div>
+      </div>
+
     </div>
 
-    <div id = "show"></div>
-
-    
+    <div class="hero-section" id="show">
+      <div class="grid-y">
+        <div class="grid-x">
+          <div class="hero-section" id="content-blah"></div>
+        </div>
+      </div>
+    </div>
+        
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="Assets/script.js"></script>
+
+    
 </body>
 </html>
